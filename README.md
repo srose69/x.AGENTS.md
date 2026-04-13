@@ -90,13 +90,11 @@ To integrate the AGENTS protocol into a project:
 1. Clone this repository or copy the relevant satellite files into your project documentation.
 2. Configure CI/CD to run the required linters for each language used.
 3. Train agents and developers on the protocol before they begin writing code.
-4. Use the consolidated file (`agents.md`) as a single reference document if preferred.
 
 ## Repository Contents
 
 - `AGENTS/AGENTS.md` — Core protocol with universal principles and operational workflow
 - `AGENTS/*.AGENTS.md` — Language-specific and topic-specific satellite files
-- `agents.md` — Consolidated single-file version of all satellite files
 - `README.md` — This file
 
 ## License

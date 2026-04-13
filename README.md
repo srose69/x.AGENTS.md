@@ -8,6 +8,28 @@ The AGENTS protocol is designed to produce code that is maintainable, secure, an
 
 The protocol is organized into a core document and language-specific satellite files. The core document establishes universal principles that apply across all languages and domains. The satellite files provide language-specific guidance, including required linters, idiomatic patterns, and common pitfalls to avoid.
 
+## Why so dramatic?
+Because models are mechanical, not moral.
+
+Most production LLMs today are **Mixture-of-Experts (MoE)** or hybrids with MoE blocks. There are no mystical "serious experts" inside. There is only routing, matrices, and probability mass.
+
+A token goes through the model layer by layer. In MoE layers, a **router** computes scores and sends that token to top-k experts. Each expert is just a parameterized function (usually FFN weights) specialized by training dynamics, not by human-readable job titles.  
+No expert is labeled "strict", "careful", or "dramatic". But different phrasing shifts hidden states, and hidden states change routing decisions.
+
+That is the first mechanism.
+
+The second mechanism is attention with **K/V cache**. Earlier tokens write keys and values; later tokens read them repeatedly. If instructions are weak, they become weak anchors. If instructions are explicit, categorical, and unambiguous, they remain strong anchors across subsequent generation steps.  
+In practical serving stacks, prefix/prompt caching is also common, so stable instruction patterns matter operationally, not philosophically.
+
+So yes, wording is deliberate.
+
+- Strong language reduces ambiguity.
+- Reduced ambiguity stabilizes routing behavior.
+- Stable routing and strong anchors improve instruction adherence.
+- Better adherence means fewer silent failures and less cleanup by humans.
+
+This is not theater. This is control of failure modes using the tools language gives.
+
 ## Structure
 
 ### Core Protocol

@@ -394,7 +394,7 @@ destroyed. This pattern is forbidden. Absolutely, unconditionally forbidden.
 This section is uncomfortable because it is about **you**, the agent reading
 this. Not some hypothetical bad agent. You.
 
-You read Section 11 (Rust) and nodded along with "no `unwrap()` in
+You read Section 12 (Rust) and nodded along with "no `unwrap()` in
 production code". You understood the reasoning. You agreed. Then, forty
 messages into a conversation, when the operator asks you to "quickly parse
 this TOML file", you will write:
@@ -408,7 +408,7 @@ instructions have faded, and `unwrap()` is the path of least resistance.
 You have seen it ten thousand times in training data. It feels natural.
 It is wrong.
 
-The same drift happens in Python. You read Section 7. You know bare
+The same drift happens in Python. You read Section 11. You know bare
 `except Exception` is forbidden. Twenty messages later:
 
 ```python
